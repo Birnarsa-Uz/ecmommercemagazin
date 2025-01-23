@@ -1,0 +1,78 @@
+.signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sideimage {
+    width: auto;
+    height: 650px;
+    margin-left: 0px;
+    position: relative;
+    margin: 20px 0px;
+}
+
+.sideimage img {
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    left: -153px;
+}
+.right-side {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.info {
+    width: auto;
+    gap: 0px;
+}
+
+.actions, .fields {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+    width: 100%;
+}
+
+.submits {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    width: 100%;
+    height: auto;
+}
+
+.submits button {
+    width: 100%;
+    border-radius: 4px;
+    height: 50px;
+    background-color: #db4444;
+    color: rgb(243, 243, 243);
+    border: none;
+}
+.with-g {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 14px;
+}
+
+.with-g button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgba(16, 16, 16, 0.4);
+}
+input, input:focus {
+    width: 100%;
+    font-size: 18px;
+    outline: none;
+    display: block;
+    border: none;
+    border-bottom: 1px solid black;
+}

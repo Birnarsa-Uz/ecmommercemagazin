@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @namespace svg url('https://wwww.w3.org/2000/svg'); */
+
+* {margin: 0; padding: 0; font-family: "Poppins", sans-serif;}
+body{
+    background-color: #fff;
+    overflow-x: hidden;
+}
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+header {
+    padding: 1em 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+}
+
+header nav ul li, header nav ul li a, header nav ul {
+    list-style: none;
+    text-decoration: none;
+    column-gap: 28px;
+    color: black;
+    font-size: 16px;
+    align-items: flex-start;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+header .user-actions, .search-form, header .user-actions span, header nav ul {display: flex;}
+
+.user-actions {
+    width: auto;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5px;
+}
+
+header .search-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 260px;
+    height: auto;
+    position: relative;
+}
+
+.search-form input, .search-form input:focus {
+    width: 100%;
+    height: inherit;
+    background-color: #f5f5f5;
+    padding: 5px;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    line-height: 40px;
+}
+
+.search-form img {
+    position: absolute;
+    cursor: pointer;
+    z-index: 99;
+    height: 20px;
+    width: 20px;
+    right: 5px;
+}
+
+.user-actions span {
+    width: auto;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.action-icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    background-size: cover;
+    position: relative;
+}
+
+.action-icon img {
+    height: 32px;
+    width: 32px;
+}
+
+.count {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    background-color: red;
+    z-index: 99;
+    position: absolute;
+    right: -6px;
+    bottom: 21px;
+}
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    height: auto;
+    padding: 0px;
+}
+.categories, .promotion {
+    margin: 30px 0px;
+}
+main hr {
+    margin-right: 45px;
+}
+
+.categories ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+main .categories ul li {
+    font-family: "Poppins", sans-serif;
+    width: auto;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 90px;
+}
+.promotion {
+    width: auto;
+    height: 300px;
+    border: 1px solid white;
+}
+
+.today {
+    margin-top: 140px;
+}
+.info-main { 
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    height: 100px;
+}
+
+.info-text-main {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+    width: 580px;
+    justify-content: space-between;
+}
+.title {
+    height: 100px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title span {
+    display: flex;
+    width: 115px;
+    justify-content: space-between;
+    height: 30px;
+    color: #db4444;
+}
+.title span span {
+    display: block;
+    width: 20px;
+    height: 100%;
+    border-radius: 4px;
+    background-color: #db4444;
+}
+.title h1 {
+    height: 35px;
+}
+.date {
+    display: flex;
+    height: 50px;
+    width: auto;
+    align-items: flex-end;
+}
+
+.date div {
+    display: flex;
+    align-items: center;
+}
+
+.date div * {
+    font-family: "Inter", sans-serif;
+}
+.date div div:not(.colon) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0 15px;
+    width: 50px;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.date div div:not(.colon) h1 {
+    display: block;
+    width: auto;
+    height: 33px;
+}
+
+.date div div:not(.colon) p {
+    font-size: 13px;
+}
+.colon {
+    width: auto;
+    height: auto;
+}
+
+.scroll {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    column-gap: 5px;
+}
+
+.scroll button {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 16px;
+    border: none;
+    text-align: center;
+    font-size: 27px;
+    background-color: #d5d5d5;
+    color: #242222;
+    transition: all 250ms ease-in-out;
+}
+.scroll button:active {
+    font-size: 25px;
+    transform: scale(0.9);
+    background: #b4b4b4;
+    color: #161616;
+}
+footer {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    height: auto;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 5% 0;
+    margin-top: 50px;
+    height: inherit;
+}
+
+footer .container * h1 {
+    font-size: 28px;
+}
+
+.support {
+    width: 190px;
+}
+
+.subtitles {
+    color: #fff;
+    margin-top: 24px;
+}
+
+.subtitles p {
+    margin: 16px 0px;
+    font-size: 15px;
+}

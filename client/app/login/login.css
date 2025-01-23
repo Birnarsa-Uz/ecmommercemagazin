@@ -1,0 +1,84 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sideimage {
+    width: auto;
+    height: 650px;
+    margin-left: 0px;
+    position: relative;
+    margin: 20px 0px;
+} 
+
+.sideimage img {
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    left: -150px;
+}
+
+.right-side, .right-side *:not(.actions, button, p)  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right-side {
+    width: 420px;
+    row-gap: 40px;
+}
+.info {
+    height: auto;
+    row-gap: 48px;
+    width: 100%;
+}
+
+.info-text {
+    height: auto;
+}
+
+.info-text h1 {
+    margin-bottom: 10px;
+}
+.fields {
+    width: inherit;
+    row-gap: 40px;
+}
+
+.fields input , .fields input:focus {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-size: 22px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.actions button {
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    width: 140px;
+    height: 70px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #db4444;
+}
+
+.actions button:active {
+    background: #eb7373;
+    color: #f9f9f9;
+}
+.actions p {
+    color: #db4444;
+    height: auto;
+}
