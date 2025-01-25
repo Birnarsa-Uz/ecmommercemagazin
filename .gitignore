@@ -1,7 +1,6 @@
-./server/
+server/
 node_server/
 node_modules/
 package-lock.json
 .env
 .env.local
-.idea
