@@ -32,11 +32,13 @@ type Foydal struct {
 	ID uint `json:"id" gorm:"primaryKey"`
 	Name string `json:"name"`
 	Password string `json:"password"`
-
+	Email string `json:"email"`
 }
 
 var DB *gorm.DB
-
+func createUser(ctx *gin.Context) {
+	ctx.JSON(200, gin.H{"birnarsa": "asdfasdfkjlhk adhsjkk asdkjf"})
+}
 func initDatabase() {
 	// Database bilan ishlash uchun kerakli kodlar
 	dsn := "root@tcp(127.0.0.1:3306)/foydal?charset=utf8mb4&parseTime=True&loc=Local"
@@ -48,6 +50,7 @@ func initDatabase() {
 
 	// Migratsiya
 	err = DB.AutoMigrate(&Foydal{})
+	DB.Delete()
 	if err != nil {
 		log.Fatal(err)
 	} else {
@@ -65,6 +68,8 @@ func startServer() {
 	r.GET("/", func(ctx *gin.Context) {
 		fmt.Fprintf(ctx.Writer, "Hello, World!")	
 	})
+
+	r.POST("/foydal", createUser)
 	fmt.Println("\nServer ishga tushdi, http://localhost:8080.")
 	if err := r.Run(":8080"); err != nil {
 		panic(err)
@@ -74,7 +79,5 @@ func startServer() {
 
 func main() {
 	startServer()
-	// Create Model
+	
 }
-
-// Create Model
