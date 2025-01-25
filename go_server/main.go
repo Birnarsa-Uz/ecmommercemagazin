@@ -2,8 +2,12 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+
 	"github.com/gin-gonic/gin"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 )
 
 func CORSMiddleware() gin.HandlerFunc {
@@ -24,27 +28,42 @@ func CORSMiddleware() gin.HandlerFunc {
 	}
 }
 
+type Foydal struct {
+	ID uint `json:"id" gorm:"primaryKey"`
+	Name string `json:"name"`
+	Password string `json:"password"`
+
+}
+
+var DB *gorm.DB
+
+func initDatabase() {
+	// Database bilan ishlash uchun kerakli kodlar
+	dsn := "root@tcp(127.0.0.1:3306)/foydal?charset=utf8mb4&parseTime=True&loc=Local"
+	var err error
+	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Migratsiya
+	err = DB.AutoMigrate(&Foydal{})
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println("Foydalanuvchilar jadvali yaratildi")
+	}
+
+	fmt.Println("Database ishga tushdi")
+}
+
 func startServer() {
+	
 	r := gin.Default()
 	r.Use(CORSMiddleware())
-
+	initDatabase()
 	r.GET("/", func(ctx *gin.Context) {
-	fmt.Fprintf(ctx.Writer, "Hello, World!")	
-	})
-	r.POST("/user", func(c *gin.Context) {
-		
-		type User struct {
-			Name string `json:"name"`
-			Password string `json:"password"`
-		}
-		var user User
-		if err := c.ShouldBindJSON(&user); err != nil {
-			c.JSON(400, gin.H{"error": err.Error()})
-			return
-		} else {
-			fmt.Println(" Ism:   ", user.Name, "\n", "Parol: ", user.Password)
-		}
-		
+		fmt.Fprintf(ctx.Writer, "Hello, World!")	
 	})
 	fmt.Println("\nServer ishga tushdi, http://localhost:8080.")
 	if err := r.Run(":8080"); err != nil {
